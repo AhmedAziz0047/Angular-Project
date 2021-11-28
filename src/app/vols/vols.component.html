@@ -11,21 +11,21 @@
         <div class="packages-content">
             <div class="row">
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6" *ngFor="let vol of volsList">
                     <div class="single-package-item">
                         <img src="/src/assets/download.png" alt="package-place">
                         <div class="single-package-item-txt">
-                            <h3>italy <span class="pull-right">$499</span></h3>
+                            <h3>italy <span class="pull-right">{{vol.pays}}</span></h3>
                             <div class="packages-para">
                                 <p>
                                     <span>
-                                        <i class="fa fa-angle-right"></i> 3 Days 2 nights
+                                        <i class="fa fa-angle-right"></i> {{vol.aller}}
                                     </span>
-                                    <i class="fa fa-angle-right"></i>  5 star accomodation
+                                    <i class="fa fa-angle-right"></i>  {{vol.retour}}
                                 </p>
                                 <p>
                                     <span>
-                                        <i class="fa fa-angle-right"></i>  transportation
+                                        <i class="fa fa-angle-right"></i>  {{vol.prix}}
                                     </span>
                                     <i class="fa fa-angle-right"></i> food facilities
                                  </p>

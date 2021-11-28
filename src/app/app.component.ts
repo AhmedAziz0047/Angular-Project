@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import volsL from './vols/vols.json';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Project';
+  volsList:{pays:string,aller:string,retour:string,prix:string}[]=volsL;
 }

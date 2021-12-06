@@ -140,3 +140,19 @@
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 }
+.imgbg{
+    height:400px;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    color: antiquewhite;
+    text-align: center;
+    padding-top: 6%;
+    background-image: url(C:\Users\FOUED\Desktop\resort1.jpg);
+}
+.title{
+    padding-top: 500px;
+    
+}

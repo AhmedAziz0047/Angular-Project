@@ -7,6 +7,7 @@ import  volsL from 'vols.json';
 })
 export class VolsComponent implements OnInit {
   volsList:{pays:string,aller:string,retour:string,prix:string}[]=volsL;
+  img="assets/login.png";
   constructor() { }
 
   ngOnInit(): void {

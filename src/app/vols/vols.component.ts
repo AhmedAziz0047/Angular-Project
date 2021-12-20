@@ -6,6 +6,9 @@ import  volsL from 'vols.json';
   styleUrls: ['./vols.component.css']
 })
 export class VolsComponent implements OnInit {
+  onAdd(){
+    alert('success');
+  }
   volsList:{pays:string,aller:string,retour:string,prix:string}[]=volsL;
   img="assets/login.png";
   constructor() { }

@@ -6,6 +6,7 @@ import volsL from './vols/vols.json';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Angular-Project';
   volsList:{pays:string,aller:string,retour:string,prix:string}[]=volsL;
 }

@@ -9,9 +9,9 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
     box-shadow: 0 0 20px rgba(0,0,0,.1);
-    -webkit-transition: .5s; 
-    -moz-transition:.5s; 
-    -ms-transition:.5s; 
+    -webkit-transition: .5s;
+    -moz-transition:.5s;
+    -ms-transition:.5s;
     -o-transition:.5s;
     transition: .5s;
 }
@@ -69,9 +69,9 @@
     font-size: 14px;
     color: #fff;
     text-transform: capitalize;
-    -webkit-transition: .5s; 
-    -moz-transition:.5s; 
-    -ms-transition:.5s; 
+    -webkit-transition: .5s;
+    -moz-transition:.5s;
+    -ms-transition:.5s;
     -o-transition:.5s;
     transition: .5s;
 
@@ -96,7 +96,7 @@
 /* gallary-header  */
 .gallary-header h2{
     position:relative;
-    color:#565a5c;  
+    color:#565a5c;
     font-size:30px;
     font-weight:500;
     text-transform:capitalize;
@@ -105,7 +105,7 @@
 }
 .gallary-header p{
     position:relative;
-    color:#aaa;  
+    color:#aaa;
     font-size:16px;
     font-family: 'Poppins', sans-serif;
     margin-top: 17px;
@@ -154,5 +154,5 @@
 }
 .title{
     padding-top: 500px;
-    
+
 }

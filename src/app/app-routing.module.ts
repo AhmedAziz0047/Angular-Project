@@ -9,13 +9,26 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { AdminFlightsComponent } from './admin-flights/admin-flights.component';
+import { CarsAdminComponent } from './cars-admin/cars-admin.component';
+import { UsersAdminComponent } from './users-admin/users-admin.component';
+import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
 
 
 
 const routes:Routes=[
   {path:'reservation',component:ReservationComponent},
   { path:'vols',component:VolsComponent },
-  { path:'adminnav',component:AdminNavComponent},
+  { path:'',component:VolsComponent },
+  {
+    path:'adminnav',component:AdminNavComponent,
+    children:[
+      {path:'adminflights',component:AdminFlightsComponent},
+      {path:'adminCars',component:CarsAdminComponent},
+      {path:'adminUser',component:UsersAdminComponent},
+      {path:'adminReservations',component:AdminReservationsComponent}
+    ]
+  },
   { path:'cars',component:CarsComponent },
   { path:'login',component:LoginComponent},
   { path:'signup',component:SignupComponent },
@@ -30,3 +43,9 @@ const routes:Routes=[
   exports:[RouterModule],
 })
 export class AppRoutingModule {   }
+export const routingComponents=[
+                                  AdminFlightsComponent,
+                                  CarsAdminComponent,
+                                  UsersAdminComponent,
+                                  AdminReservationsComponent
+                                ]

@@ -15,6 +15,10 @@ import { AdminDashbordModule } from './admin-dashbord/admin-dashbord.module';
 import { VehiculeModule } from './modules/vehicule/vehicule.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { AdminFlightsComponent } from './admin-flights/admin-flights.component';
+import { UsersAdminComponent } from './users-admin/users-admin.component';
+import { CarsAdminComponent } from './cars-admin/cars-admin.component';
+import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
 // import {MatInputModule} from '@angular/material';
 
 @NgModule({
@@ -29,7 +33,11 @@ import { ReservationComponent } from './reservation/reservation.component';
     LoginComponent,
     FooterComponent,
     NotFoundComponent,
-    ReservationComponent
+    ReservationComponent,
+    AdminFlightsComponent,
+    UsersAdminComponent,
+    CarsAdminComponent,
+    AdminReservationsComponent
   ],
   imports: [
     BrowserModule,

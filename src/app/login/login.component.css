@@ -43,6 +43,8 @@
 .booking-form .form-group {
 	position: relative;
 	margin-bottom: 30px;
+  width: 70%;
+  margin-left: 15%;
 }
 
 .booking-form .form-control {

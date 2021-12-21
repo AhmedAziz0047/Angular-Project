@@ -13,7 +13,10 @@
     -moz-transition:.5s;
     -ms-transition:.5s;
     -o-transition:.5s;
-    transition: .5s;
+    transition: .2s;
+}
+.single-package-item:hover{
+  transform: scale(1.05,1.05);
 }
 .single-package-item-txt{
     padding: 0 25px;
@@ -145,12 +148,17 @@
     background-repeat: no-repeat, repeat;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 105%;
     width: 100%;
     color: antiquewhite;
     text-align: center;
     padding-top: 6%;
+    transition: 0.3s;
     background-image: url(C:\Users\FOUED\Desktop\resort1.jpg);
+}
+.imgbg:hover{
+  background-size: 100%;
+
 }
 .title{
     padding-top: 500px;

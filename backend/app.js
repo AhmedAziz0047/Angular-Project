@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app=express();
 const flights =require('./models/Flight');
+const reservations =require('./models/Reservation');
 
 mongoose.connect('mongodb://localhost:27017/travel',
   { useNewUrlParser: true,
@@ -21,6 +22,11 @@ app.get('/api/flights',(req,res)=>{
     flights.find()
       .then(flights=>res.status(300).json(flights))
       .catch(err=>res.status(400).json({error: err.message}))
+});
+app.get('/api/res',(req,res)=>{
+  reservations.find()
+    .then(reservations=>res.status(300).json(reservations))
+    .catch(err=>res.status(400).json({error: err.message}))
 });
 
 

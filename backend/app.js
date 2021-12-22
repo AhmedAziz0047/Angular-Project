@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app=express();
+const flights =require('./models/Flight');
 
 mongoose.connect('mongodb://localhost:27017/travel',
   { useNewUrlParser: true,
@@ -17,13 +18,11 @@ app.use((req, res, next) => {
 });
 
 app.get('/api/flights',(req,res)=>{
-  const flights =[
-    {
-    'id':'fefef',
-    'nom':'aaze'
-  }
-];
-res.json(flights);
+    flights.find()
+      .then(flights=>res.status(300).json(flights))
+      .catch(err=>res.status(400).json({error: err.message}))
 });
+
+
 
 module.exports=app;

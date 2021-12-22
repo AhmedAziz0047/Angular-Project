@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app=express();
-const flights =require('./models/Flight');
-const reservations =require('./models/Reservation');
+const flights =require('./routes/flights');
+const reservations =require('./routes/reservations');
 
 mongoose.connect('mongodb://localhost:27017/travel',
   { useNewUrlParser: true,
@@ -17,17 +17,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
-
-app.get('/api/flights',(req,res)=>{
-    flights.find()
-      .then(flights=>res.status(300).json(flights))
-      .catch(err=>res.status(400).json({error: err.message}))
-});
-app.get('/api/res',(req,res)=>{
-  reservations.find()
-    .then(reservations=>res.status(300).json(reservations))
-    .catch(err=>res.status(400).json({error: err.message}))
-});
+app.use('/',flights);
+app.use('/',reservations);
 
 
 

@@ -2,8 +2,14 @@ const express=require('express');
 
 const app=express();
 
-app.use((req, res)=>{
-  res.json('hhhhhh');
-})
+app.get('/api/flights',(req,res)=>{
+  const flights =[
+    {
+    'id':'fefef',
+    'nom':'aaze'
+  }
+];
+res.json(flights);
+});
 
 module.exports=app;

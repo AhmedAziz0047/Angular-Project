@@ -1,15 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {getFlights}=require('./../Controller/Flights')
+const {getFlights,updateFlight,createFlight,deleteFlight}=require('./../Controller/Flights')
 
 
 
-router.get('/api/flights',getFlights);
+router.get('/api/getFlights',getFlights);
+router.post('/api/addFlight',createFlight);
+router.delete('/api/deleteFlight/:id',deleteFlight);
+router.put('/api/editFlight/:id', updateFlight);
 
-
-
-router.put('/api/res/id',(req,res)=>{
-
-});
 
 module.exports=router;

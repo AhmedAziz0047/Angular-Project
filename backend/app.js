@@ -1,8 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app=express();
-const flights =require('./routes/flights');
-const reservations =require('./routes/reservations');
+const flightsRoute =require('./routes/flights');
+const reservationsRoute =require('./routes/reservations');
+app.use(express.urlencoded({extended:true}));
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost:27017/travel',
   { useNewUrlParser: true,
@@ -11,14 +14,16 @@ mongoose.connect('mongodb://localhost:27017/travel',
   .catch(() => console.log('Connection failed to MongoDB !'));
 
 
+app.use(express.json());
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
-app.use('/',flights);
-app.use('/',reservations);
+app.use('/',flightsRoute);
+app.use('/',reservationsRoute);
 
 
 

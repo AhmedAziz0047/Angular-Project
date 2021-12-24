@@ -4,8 +4,10 @@ import { VolsComponent } from './vols/vols.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule,Routes } from '@angular/router';
 import { CarsComponent } from './cars/cars.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+//import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+//import { SignupComponent } from './signup/signup.component';
+import { RegisterComponent } from './auth/register/register.component'
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReservationComponent } from './reservation/reservation.component';
@@ -40,8 +42,10 @@ const routes:Routes=[
     ]
   },
   { path:'cars',component:CarsComponent },
+  //{ path:'login',component:LoginComponent},
   { path:'login',component:LoginComponent},
-  { path:'signup',component:SignupComponent },
+ // { path:'signup',component:SignupComponent },
+ { path:'register',component:RegisterComponent},
   { path:'**',component:NotFoundComponent },
   { path: 'dash', loadChildren: () => import('./admin-dashbord/admin-dashbord.module').then(m => m.AdminDashbordModule) },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }

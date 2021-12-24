@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app=express();
 const flightsRoute =require('./routes/flights');
 const reservationsRoute =require('./routes/reservations');
+const userRouter = require('./routes/users');
 app.use(express.urlencoded({extended:true}));
 var bodyParser = require('body-parser');
 const cors = require('cors');
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 });
 app.use('/',flightsRoute);
 app.use('/',reservationsRoute);
+app.use('/api/auth', userRouter);
 
 
 

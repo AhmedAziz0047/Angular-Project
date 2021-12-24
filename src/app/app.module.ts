@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateFlightAdminComponent } from './update-flight-admin/update-flight-admin.component';
 import { UpdateReservationAdminComponent } from './update-reservation-admin/update-reservation-admin.component';
+import { AddFlightAadminComponent } from './add-flight-aadmin/add-flight-aadmin.component';
+import { AddReservationAadminComponent } from './add-reservation-aadmin/add-reservation-aadmin.component';
 // import {MatInputModule} from '@angular/material';
 
 @NgModule({
@@ -43,7 +45,9 @@ import { UpdateReservationAdminComponent } from './update-reservation-admin/upda
     CarsAdminComponent,
     AdminReservationsComponent,
     UpdateFlightAdminComponent,
-    UpdateReservationAdminComponent
+    UpdateReservationAdminComponent,
+    AddFlightAadminComponent,
+    AddReservationAadminComponent
   ],
   imports: [
     BrowserModule,

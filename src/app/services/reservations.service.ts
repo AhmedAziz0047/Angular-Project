@@ -33,7 +33,7 @@ export class ReservationsService {
 
 
    add(data: any){
-     return this.http.post(this.apiUrl + 'createReservation' , data);
+     return this.http.post(this.apiUrl + 'addReservations' , data);
    }
 
 

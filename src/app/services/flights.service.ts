@@ -3,7 +3,7 @@
 // import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+//import { Observable, Subject } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
@@ -22,7 +22,12 @@ export class FlightsService {
 
   private apiUrl = 'http://localhost:3000/api/';
 
-  constructor(private http: HttpClient) { }
+   constructor(private http: HttpClient) { }
+  // private _refreshNeeded$=new Subject<void>();
+
+  // get refreshNeeded (){
+  //   return this._refreshNeeded$;
+  // }
 
   all() {
 

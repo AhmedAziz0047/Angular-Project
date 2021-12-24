@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { FlightsService } from '../services/flights.service';
 import { ReservationsService } from '../services/reservations.service';
-
+import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 @Component({
   selector: 'app-update-reservation-admin',
   templateUrl: './update-reservation-admin.component.html',
@@ -36,13 +35,9 @@ export class UpdateReservationAdminComponent implements OnInit {
 
 
   }
-
-  updateR(){
-
+  update(){
     this._reser.update(this.id , this.reservation).subscribe(
-      res=>{
-
-      }
+      res=>{}
     );
 
   }

@@ -17,26 +17,20 @@
 
                 <div class="col-md-4 col-sm-6" *ngFor="let flight of flightsList">
                     <div class="single-package-item">
-                        <img src="assets/gg.jpg" alt="package-place">
+                        <img src={{flight.photo}} alt="package-place">
                         <div class="single-package-item-txt">
-                            <h3>italy <span class="pull-right"></span></h3>
+                            <h3>{{flight.country}} <span class="pull-right"></span></h3>
                             <div class="packages-para">
                                 <p>
                                     <span>
-                                        <i class="fa fa-angle-right"></i>
+                                        <i class="fa fa-angle-right"></i>  {{flight.date_aller}}
                                     </span>
-                                    <i class="fa fa-angle-right"></i>
-                                </p>
-                                <p>
-                                    <span>
-                                        <i class="fa fa-angle-right"></i>  {{flight.title}}
-                                    </span>
-                                    <i class="fa fa-angle-right"></i>  {{flight.country}}
+                                    <i class="fa fa-angle-right"></i>  {{flight.date_retour}}
                                  </p>
                             </div>
 
                             <div class="about-btn">
-                                <button  class="about-view packages-btn">
+                                <button  class="about-view packages-btn" [routerLink]="['/reservation' , flight.country]">
                                     Réserver
                                 </button>
                             </div>

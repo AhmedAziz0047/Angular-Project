@@ -5,7 +5,9 @@ const flightsRoute =require('./routes/flights');
 const reservationsRoute =require('./routes/reservations');
 app.use(express.urlencoded({extended:true}));
 var bodyParser = require('body-parser');
+const cors = require('cors');
 app.use(bodyParser.json());
+app.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/travel',
   { useNewUrlParser: true,

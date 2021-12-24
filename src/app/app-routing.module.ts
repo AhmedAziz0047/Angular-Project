@@ -13,6 +13,8 @@ import { AdminFlightsComponent } from './admin-flights/admin-flights.component';
 import { CarsAdminComponent } from './cars-admin/cars-admin.component';
 import { UsersAdminComponent } from './users-admin/users-admin.component';
 import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
+import { UpdateFlightAdminComponent } from './update-flight-admin/update-flight-admin.component';
+import { UpdateReservationAdminComponent } from './update-reservation-admin/update-reservation-admin.component';
 
 
 
@@ -23,10 +25,14 @@ const routes:Routes=[
   {
     path:'adminnav',component:AdminNavComponent,
     children:[
-      {path:'adminflights',component:AdminFlightsComponent},
+      {path:'adminflights',component:AdminFlightsComponent,children:[
+        {path:'adminUpdateFlight/:id',component:UpdateFlightAdminComponent},
+      ]},
       {path:'adminCars',component:CarsAdminComponent},
       {path:'adminUser',component:UsersAdminComponent},
-      {path:'adminReservations',component:AdminReservationsComponent}
+      {path:'adminReservations',component:AdminReservationsComponent,children:[
+        {path:'adminUpdateReservation/:id',component:UpdateReservationAdminComponent},
+      ]}
     ]
   },
   { path:'cars',component:CarsComponent },

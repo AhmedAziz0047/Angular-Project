@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightsService } from '../services/flights.service';
 
 @Component({
   selector: 'app-admin-flights',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminFlightsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private flight: FlightsService) { }
+
+  flights:any;
+
 
   ngOnInit(): void {
+
+    this.flight.all().subscribe(
+      res=>{
+        this.flights = res;
+      }
+    );
+
+  }
+
+
+
+  delete(id:any){
+    this.flight.delete(id).subscribe(
+      res=>{
+        this.ngOnInit();
+      }
+    );
   }
 
 }

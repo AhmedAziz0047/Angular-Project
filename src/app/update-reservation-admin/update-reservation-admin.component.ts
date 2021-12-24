@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { FlightsService } from '../services/flights.service';
 import { ReservationsService } from '../services/reservations.service';
 
@@ -45,7 +44,6 @@ export class UpdateReservationAdminComponent implements OnInit {
 
       }
     );
-    this.route.navigate(['/servers'],{relativeTo:this.route})
 
   }
 

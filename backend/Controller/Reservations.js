@@ -3,7 +3,12 @@ const Reservation=require('./../models/Reservation');
 
 exports.getReservations=(req, res)=>{
   Reservation.find()
-  .then(Reservation=>res.status(300).json(Reservation))
+  .then(Reservation=>res.status(200).json(Reservation))
+  .catch(err=>res.status(400).json({error: err.message}))
+}
+exports.getReservById=(req, res)=>{
+  Reservation.findOne({_id: req.params.id})
+  .then(reservation=>res.send(reservation))
   .catch(err=>res.status(400).json({error: err.message}))
 }
 exports.createReservation = (req, res, next) => {

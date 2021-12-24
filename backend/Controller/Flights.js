@@ -2,7 +2,13 @@ const Flight=require('./../models/Flight');
 
 exports.getFlights=(req, res)=>{
   Flight.find()
-  .then(Flight=>res.status(300).json(Flight))
+  .then(flight=>res.send(flight))
+  .catch(err=>res.status(400).json({error: err.message}))
+}
+
+exports.getFlightById=(req, res)=>{
+  Flight.findOne({_id: req.params.id})
+  .then(flight=>res.send(flight))
   .catch(err=>res.status(400).json({error: err.message}))
 }
 

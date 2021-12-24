@@ -1,35 +1,35 @@
-
+<div class="col-md-3">
+  <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block">ADD Reservation <i class="fas fa-plus"></i></button>
+</div>
 <div id="content">
   <div class="container-fluid">
-    <table class="table">
+    <table class="table" cellSpacing=50>
       <thead>
         <tr>
-          <th scope="col">Client name</th>
           <th scope="col">Country</th>
-          <th scope="col">Departure date</th>
-          <th scope="col">Price</th>
+          <th scope="col">Client Name</th>
+          <th scope="col">Client last name</th>
+          <th scope="col">email</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        <tr *ngFor="let item of reservations">
+          <td>{{item.country}}</td>
+          <td>{{item.prenomclient}}</td>
+          <td> {{item.nomclient}} </td>
+          <th scope="row">{{item.email}}</th>
+          <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
+          <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminReservations/adminUpdateReservation' , item._id]"></i></th>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+
+
       </tbody>
     </table>
+
   </div>
+
 </div>
+<div class="updateOut">
+   <router-outlet></router-outlet>
+</div>
+

@@ -19,6 +19,10 @@ import { AdminFlightsComponent } from './admin-flights/admin-flights.component';
 import { UsersAdminComponent } from './users-admin/users-admin.component';
 import { CarsAdminComponent } from './cars-admin/cars-admin.component';
 import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { UpdateFlightAdminComponent } from './update-flight-admin/update-flight-admin.component';
+import { UpdateReservationAdminComponent } from './update-reservation-admin/update-reservation-admin.component';
 // import {MatInputModule} from '@angular/material';
 
 @NgModule({
@@ -37,12 +41,14 @@ import { AdminReservationsComponent } from './admin-reservations/admin-reservati
     AdminFlightsComponent,
     UsersAdminComponent,
     CarsAdminComponent,
-    AdminReservationsComponent
+    AdminReservationsComponent,
+    UpdateFlightAdminComponent,
+    UpdateReservationAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule, AdminDashbordModule, VehiculeModule,
+    RouterModule, AdminDashbordModule, VehiculeModule,HttpClientModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

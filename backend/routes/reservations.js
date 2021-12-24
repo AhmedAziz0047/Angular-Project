@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {getReservations,deleteReservations,createReservation,updateReservations}=require('./../Controller/Reservations')
+const {getReservById,getReservations,deleteReservations,createReservation,updateReservations}=require('./../Controller/Reservations')
 
-router.get('/api/reservations',getReservations);
+router.get('/api/getReservations',getReservations);
 router.post('/api/addReservations',createReservation);
+router.get('/api/getReservbyid/:id',getReservById);
 router.delete('/api/deleteReservations/:id',deleteReservations);
 router.put('/api/editReservations/:id', updateReservations);
 // router.delete('/dr:id',deleteReservations);

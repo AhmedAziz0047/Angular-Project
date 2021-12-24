@@ -43,7 +43,8 @@ const routes:Routes=[
   { path:'login',component:LoginComponent},
   { path:'signup',component:SignupComponent },
   { path:'**',component:NotFoundComponent },
-  { path: 'dash', loadChildren: () => import('./admin-dashbord/admin-dashbord.module').then(m => m.AdminDashbordModule) }
+  { path: 'dash', loadChildren: () => import('./admin-dashbord/admin-dashbord.module').then(m => m.AdminDashbordModule) },
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }
 
 
 ]

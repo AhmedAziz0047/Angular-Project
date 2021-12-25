@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { FlightsService } from '../services/flights.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { FlightsService } from '../services/flights.service';
 })
 export class UpdateFlightAdminComponent implements OnInit {
 
-  constructor(private _flight: FlightsService , private  route: ActivatedRoute) { }
+  constructor(private _flight: FlightsService , private  route: ActivatedRoute,private  router: Router) { }
 
   id: any;
   flight = {
@@ -36,6 +36,9 @@ export class UpdateFlightAdminComponent implements OnInit {
     );
 
 
+  }
+  navigate(){
+    this.router.navigate(['/adminnav/adminflights']);
   }
 
   update(){

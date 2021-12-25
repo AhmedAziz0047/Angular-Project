@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Injectable } from '@angular/core';
 import  volsL from 'vols.json';
 import {FlightsService} from 'src/app/services/flights.service';
@@ -22,7 +22,7 @@ ngOnInit(): any {
       res=>{this.flightsList=res;
         for(let i=0;i< this.flightsList.length;i++){
               if(this.flightsList[i].places_left>0){
-               this.filteredflightsList.push( this.flightsList[i])
+               this.filteredflightsList.push(this.flightsList[i])
               };console.log(this.filteredflightsList);
         }
       },error=>{console.log(error)}

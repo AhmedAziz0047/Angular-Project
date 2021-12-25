@@ -30,14 +30,14 @@
 								</div>
                 <div class="form-group">
 									<span class="form-label">date_aller</span>
-									<input class="form-control" [(ngModel)]="flight.date_aller" type="text" placeholder="Arrival Date">
+									<input class="form-control" [(ngModel)]="flight.date_aller" type="date" placeholder="Arrival Date">
 								</div>
                 <div class="form-group">
 									<span class="form-label">date_retour</span>
-									<input class="form-control" [(ngModel)]="flight.date_retour" type="text" placeholder="Departure Date">
+									<input class="form-control" [(ngModel)]="flight.date_retour" type="date" placeholder="Departure Date">
 								</div>
                 <div class="form-group">
-									<span class="form-label">places_left</span>
+									<span class="form-label">Price</span>
 									<input class="form-control" [(ngModel)]="flight.prix" type="text" placeholder="Price">
 								</div>
 
@@ -50,7 +50,7 @@
 									<input class="form-control" [(ngModel)]="flight.photo" type="text" placeholder="Picture">
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn" (click)="addFlight()">ADD New Flight</button>
+									<button class="submit-btn" [routerLink]="['/adminnav/adminFlights']" (click)="addFlight()">ADD New Flight</button>
 								</div>
 							</div>
 						</div>

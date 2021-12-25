@@ -17,7 +17,7 @@
           <td>{{item.country}}</td>
           <td>{{item.date_aller}}</td>
           <td> {{item.date_retour}} </td>
-          <th scope="row">{{item.price}}</th>
+          <td>{{item.prix}}</td>
           <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
           <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminflights/adminUpdateFlight' , item._id]"></i></th>
         </tr>

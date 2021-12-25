@@ -15,11 +15,11 @@
       <tbody>
         <tr *ngFor="let item of reservations">
           <td>{{item.country}}</td>
-          <td>{{item.prenomclient}}</td>
-          <td> {{item.nomclient}} </td>
-          <th scope="row">{{item.email}}</th>
+          <td>{{item.nomclient}}</td>
+          <td> {{item.prenomclient}} </td>
+          <td> {{item.email}} </td>
           <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
-          <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminReservations/adminUpdateReservation' , item._id]"></i></th>
+          <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminReservations/adminUpdateReservation' , item.codeReserv]"></i></th>
         </tr>
 
 

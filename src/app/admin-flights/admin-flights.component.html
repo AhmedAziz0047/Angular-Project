@@ -1,6 +1,17 @@
 <div class="col-md-3">
-  <button type="button" [routerLink]="['adminAddFlight']" class="btn mb-2 mb-md-0 btn-primary btn-block">ADD FLIGHT <i class="fas fa-plus"></i></button>
+      <ul>
+        <li>
+          <a role="button" [routerLink]="['adminAddFlight']" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fa fa-plane"></span>
+          </a>
+        </li>
+      </ul>
 </div>
+
 <div id="content">
   <div class="container-fluid">
     <table class="table" cellSpacing=50>
@@ -17,7 +28,7 @@
           <td>{{item.country}}</td>
           <td>{{item.date_aller}}</td>
           <td> {{item.date_retour}} </td>
-          <td>{{item.prix}}</td>
+          <th scope="row">{{item.prix}}</th>
           <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
           <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminflights/adminUpdateFlight' , item._id]"></i></th>
         </tr>

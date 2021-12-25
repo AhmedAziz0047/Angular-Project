@@ -38,19 +38,19 @@
 								</div>
                 <div class="form-group">
 									<span class="form-label">Price</span>
-									<input class="form-control" [(ngModel)]="flight.prix" type="text" placeholder="Price">
+									<input class="form-control" [(ngModel)]="flight.prix" type="number" placeholder="Price">
 								</div>
 
                 <div class="form-group">
-									<span class="form-label">places_left</span>
-									<input class="form-control" [(ngModel)]="flight.places_left" type="text" placeholder="places_left">
+									<span class="form-label">Remaining Seats</span>
+									<input class="form-control" [(ngModel)]="flight.Remaining_Seats" type="number" placeholder="Remaining Seats">
 								</div>
                 <div class="form-group">
 									<span class="form-label">Picture</span>
 									<input class="form-control" [(ngModel)]="flight.photo" type="text" placeholder="Picture">
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn" [routerLink]="['/adminnav/adminFlights']" (click)="addFlight()">ADD New Flight</button>
+									<button class="submit-btn"(click)="addFlight()">ADD New Flight</button>
 								</div>
 							</div>
 						</div>

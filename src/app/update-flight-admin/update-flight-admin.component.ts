@@ -18,7 +18,7 @@ export class UpdateFlightAdminComponent implements OnInit {
     date_aller: "",
     date_retour: "",
     prix: 0,
-    places_left: 0,
+    Remaining_Seats: 0,
     photo: ""
 
   };

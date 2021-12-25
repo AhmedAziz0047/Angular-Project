@@ -21,7 +21,7 @@ ngOnInit(): any {
     this.fservice.all().subscribe(
       res=>{this.flightsList=res;
         for(let i=0;i< this.flightsList.length;i++){
-              if(this.flightsList[i].places_left>0){
+              if(this.flightsList[i].Remaining_Seats>0){
                this.filteredflightsList.push(this.flightsList[i])
               };console.log(this.filteredflightsList);
         }

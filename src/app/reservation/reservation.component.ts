@@ -23,7 +23,7 @@ export class ReservationComponent implements OnInit {
     date_aller: "",
     date_retour: "",
     prix: 0,
-    places_left: 0,
+    Remaining_Seats: 0,
     photo: ""
 
   };
@@ -32,24 +32,26 @@ export class ReservationComponent implements OnInit {
   toBeUhpdated:any;
   updated:any;
 
-  placesLeft=0;
+
+
+  RemainingSeats=0;
 
   ngOnInit(): void {
       this.flights.getbyid(this.id).subscribe(
         res=>{
           this.fl= res;
-          this.placesLeft=this.fl.places_left;
-          this.flight = this.fl;console.log(this.placesLeft);
-          console.log(this.placesLeft)
+          this.RemainingSeats=this.fl.Remaining_Seats;
+          this.flight = this.fl;console.log(this.RemainingSeats);
+          console.log(this.RemainingSeats)
         }
 
     );
 
   }
   updatePlacesLeft()
-  { this.placesLeft=this.placesLeft-1;
+  { this.RemainingSeats=this.RemainingSeats-1;
     this.flight=this.fl
-    this.flight.places_left=this.placesLeft
+    this.flight.Remaining_Seats=this.RemainingSeats
     this.flights.update(this.id , this.flight).subscribe(
       res=>{});
   }

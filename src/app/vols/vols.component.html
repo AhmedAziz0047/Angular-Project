@@ -14,10 +14,10 @@
         </div>
         <div class="packages-content">
             <div class="row">
+                <div class="col-md-4 col-sm-6" *ngFor="let flight of filteredflightsList" >
 
-                <div class="col-md-4 col-sm-6" *ngFor="let flight of flightsList">
-                    <div class="single-package-item">
-                        <img src={{flight.photo}} alt="package-place">
+                    <div class="single-package-item" >
+                        <img src={{flight.photo}} alt="package-place" >
                         <div class="single-package-item-txt">
                             <h3>{{flight.country}} <span class="pull-right"></span></h3>
                             <div class="packages-para">

@@ -12,15 +12,22 @@ import {FlightsService} from 'src/app/services/flights.service';
 })
 export class VolsComponent  implements OnInit {
   public flightsList:any=[];
+  public filteredflightsList:any=[];
 
   constructor(private fservice:FlightsService) { }
 
 
-ngOnInit(): void {
+ngOnInit(): any {
     this.fservice.all().subscribe(
-      res=>{this.flightsList=res;console.log(this.flightsList);},error=>{console.log(error)}
-
+      res=>{this.flightsList=res;
+        for(let i=0;i< this.flightsList.length;i++){
+              if(this.flightsList[i].places_left>0){
+               this.filteredflightsList.push( this.flightsList[i])
+              };console.log(this.filteredflightsList);
+        }
+      },error=>{console.log(error)}
       );
+
 
 
 }

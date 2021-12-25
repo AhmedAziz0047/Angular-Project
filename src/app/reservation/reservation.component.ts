@@ -48,12 +48,8 @@ export class ReservationComponent implements OnInit {
   }
   updatePlacesLeft()
   { this.placesLeft=this.placesLeft-1;
-    this.flight.country=this.fl.country
-    this.flight.date_aller=this.fl.date_aller
-    this.flight.date_retour=this.fl.date_retour
-    this.flight.photo=this.fl.photo;
-    this.flight.places_left=this.placesLeft;
-    this.flight.prix=this.fl.prix;
+    this.flight=this.fl
+    this.flight.places_left=this.placesLeft
     this.flights.update(this.id , this.flight).subscribe(
       res=>{});
   }

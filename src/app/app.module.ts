@@ -8,8 +8,8 @@ import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarsComponent } from './cars/cars.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
-import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
+
+
 import { FooterComponent } from './footer/footer.component';
 import { AdminDashbordModule } from './admin-dashbord/admin-dashbord.module';
 import { VehiculeModule } from './modules/vehicule/vehicule.module';
@@ -35,8 +35,7 @@ import { AddReservationAadminComponent } from './add-reservation-aadmin/add-rese
     NavbarComponent,
     CarsComponent,
     AdminNavComponent,
-    SignupComponent,
-    LoginComponent,
+ 
     FooterComponent,
     NotFoundComponent,
     ReservationComponent,

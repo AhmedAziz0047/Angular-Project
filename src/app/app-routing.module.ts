@@ -26,6 +26,7 @@ const routes:Routes=[
   {path:'reservation/:id',component:ReservationComponent},
   { path:'vols',component:VolsComponent },
   { path:'',component:VolsComponent },
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   {
     path:'adminnav',component:AdminNavComponent,
     children:[

@@ -26,14 +26,16 @@
                                         <i class="fa fa-angle-right"></i>  {{flight.date_aller}}
                                     </span>
                                     <i class="fa fa-angle-right"></i>  {{flight.date_retour}}
+                                    <span>
+                                  </span>
+                                  <span>
+                                  </span>
                                  </p>
                             </div>
 
-                            <div class="about-btn">
-                                <button  class="about-view packages-btn" [routerLink]="['/reservation' , flight._id]">
-                                    Réserver
-                                </button>
-                            </div>
+
+                              <span class="spanButton"><a role="button"  [routerLink]="['/reservation' , flight._id]"></a></span>
+
                         </div>
                     </div>
                 </div>
@@ -42,3 +44,4 @@
     </div>
 
 </section>
+

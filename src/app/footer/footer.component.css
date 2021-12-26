@@ -4,12 +4,12 @@
 .single-footer-txt p a{
     color:#565a5c;
     font-size:16px;
-    -webkit-transition: .5s ease-in-out; 
-    -moz-transition:.5s ease-in-out; 
-    -ms-transition:.5s ease-in-out; 
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition:.5s ease-in-out;
+    -ms-transition:.5s ease-in-out;
     -o-transition:.5s ease-in-out;
     transition: .5s ease-in-out;
-    
+
 }
 .single-footer-txt p a:hover{
     -webkit-transition:scaleX(1.2);
@@ -103,9 +103,9 @@
     background:#00d8ff;
 	border:1px solid #00d8ff;
 	border-radius:5px;
-	-webkit-transition: .5s; 
-	-moz-transition:.5s; 
-	-ms-transition:.5s; 
+	-webkit-transition: .5s;
+	-moz-transition:.5s;
+	-ms-transition:.5s;
 	-o-transition:.5s;
     transition: .5s;
 	z-index: 2;
@@ -121,4 +121,12 @@
 
 .list-inline{
     display:inline-flex;
+}
+footer{
+  background-color: #3a3e3f;
+  margin-bottom: 0%;
+}
+
+.foot-icons {
+  padding-top: 2%;
 }

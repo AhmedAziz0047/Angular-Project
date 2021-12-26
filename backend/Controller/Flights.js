@@ -11,6 +11,11 @@ exports.getFlightById=(req, res)=>{
   .then(flight=>res.send(flight))
   .catch(err=>res.status(400).json({error: err.message}))
 }
+exports.getFlightByCountry=(req, res)=>{
+  Flight.findOne({_country: req.params.country})
+  .then(flight=>res.send(flight))
+  .catch(err=>res.status(400).json({error: err.message}))
+}
 
 exports.createFlight = (req, res, next) => {
   const flight = new Flight({

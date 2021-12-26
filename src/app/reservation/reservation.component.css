@@ -14,7 +14,7 @@
 
 #booking {
 	font-family: 'Montserrat', sans-serif;
-	/* background-image: url('C:\Users\Bilel\Desktop\Angular_project\Angular-Project\src\assets\backgroundRes.jpg'); */
+	background-image:  url('/src/assets/backgroundRes.jpg');
 	background-size: cover;
 	background-position: center;
 }

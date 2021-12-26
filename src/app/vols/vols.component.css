@@ -156,7 +156,7 @@
     text-align: center;
     padding-top: 6%;
     transition: 0.3s;
-    background-image: url();
+    background-image: url('src/assets/resort.jpg');
 }
 .imgbg:hover{
   background-size: 100%;

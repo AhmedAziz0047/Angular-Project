@@ -1,18 +1,30 @@
-<<div class="col-md-4 col-md-pull-7">
+<div class="col-md-4 col-md-pull-7">
+  <div *ngIf="registerForm.dirty && registerForm.invalid" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <p *ngIf="registerForm.controls.name.errors?.required">The name is required</p>
+  <p *ngIf="registerForm.controls.email.errors?.email">Please enter a valid email</p>
+  <p *ngIf="registerForm.controls.email.errors?.required">An email is required</p>
+  <p *ngIf="registerForm.controls.email.errors?.used">Email already used</p>
+  <p *ngIf="registerForm.controls.password.errors?.required">A password is required</p>
+  <p *ngIf="registerForm.controls.password.errors?.minlength">A password is minimum 6 characters length</p>
+  <!-- <p *ngIf="registerForm.controls.confirm_password.errors?.required">A password confirm is required</p>
+  <p *ngIf="registerForm.controls.confirm_password.errors?.NoPassswordMatch">The password confirm doesn't match
+  </p> -->
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
   <div class="booking-form">
       <form [formGroup]="registerForm" (ngSubmit)="signupUser()">
       <img src="assets/sign up.png" id="profile-img" class="profile-img-card" >
       <div class="form-group">
         <span class="form-label">Name</span>
-        <input class="form-control" type="text" placeholder="Name">
+        <input formControlName="name" class="form-control" type="text" placeholder="Name" [class.is-invalid]="registerForm.dirty && registerForm.controls['name'].invalid" [class.is-valid]="registerForm.dirty && registerForm.controls['name'].valid">
       </div>
       <div class="form-group">
         <span class="form-label">Email</span>
-        <input class="form-control" type="text" placeholder="Email">
+        <input formControlName="email" class="form-control" type="text" placeholder="name@example.com" [class.is-invalid]="registerForm.dirty && registerForm.controls['email'].invalid" [class.is-valid]="registerForm.dirty && registerForm.controls['email'].valid">
       </div>
       <div class="form-group">
         <span class="form-label">Password</span>
-        <input class="form-control" type="text" placeholder="Password">
+        <input formControlName="password" class="form-control" type="text" placeholder="Password">
       </div>
       <div class="form-btn">
         <button class="submit-btn">Sign up</button>

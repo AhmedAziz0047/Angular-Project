@@ -20,8 +20,10 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.email, Validators.required]],
-      password: ['']
-    });
+      password: ['', [Validators.minLength(6), Validators.required]],
+      confirm_password: ['', [Validators.minLength(6), Validators.required]],
+    },{validator: this.passwordMatchValidator('password', 'confirm_password')}
+    );
    }
 
   ngOnInit(): void {
@@ -40,6 +42,15 @@ export class RegisterComponent implements OnInit {
           this.registerForm.controls['email'].setErrors({used: true});
         }
       });
+    }
+  }
+  private passwordMatchValidator(password: string, confirm_password: string) {
+    return (group: FormGroup) => {
+      const passwordInput = group.controls[password];
+      const confirmPasswordInput = group.controls[confirm_password];
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        return confirmPasswordInput.setErrors({ NoPassswordMatch: true });
+      }
     }
   }
 

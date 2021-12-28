@@ -27,6 +27,7 @@ const routes:Routes=[
   { path:'vols',component:VolsComponent },
   { path:'',component:VolsComponent },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
   {
     path:'adminnav',component:AdminNavComponent,
     children:[

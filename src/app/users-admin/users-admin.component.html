@@ -1,4 +1,4 @@
-
+<!-- 
 <div id="content">
   <div class="container-fluid">
     <table class="table">
@@ -32,4 +32,48 @@
       </tbody>
     </table>
   </div>
+</div> -->
+<div class="col-md-3">
+  <ul>
+    <li>
+      <a role="button" [routerLink]="['adminAddUser']" >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="fa fa-plane"></span>
+      </a>
+    </li>
+  </ul>
 </div>
+
+<div id="content">
+<div class="container-fluid">
+<table class="table" cellSpacing=50>
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of users">
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td> {{item.password}} </td>
+      <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
+      <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminUser/adminUpdateUser' , item._id]"></i></th>
+    </tr>
+
+
+  </tbody>
+</table>
+
+</div>
+
+</div>
+<div class="updateOut">
+<router-outlet></router-outlet>
+</div>
+

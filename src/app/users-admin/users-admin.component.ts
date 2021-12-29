@@ -8,14 +8,14 @@ import { UsersService } from '../services/users.service';
 export class UsersAdminComponent implements OnInit {
 
   constructor(private user: UsersService) { }
-  usres:any;
+  users:any;
 
 
   ngOnInit(): void {
 
     this.user.all().subscribe(
       res=>{
-        this.usres = res;
+        this.users = res;
       }
     );
 

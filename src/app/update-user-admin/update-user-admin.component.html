@@ -1,1 +1,51 @@
-<p>update-user-admin works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>Booking Form HTML Template</title>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+
+						<div class="booking-form">
+							<div>
+								<div class="form-group">
+									<span class="form-label">Name</span>
+									<input class="form-control" [(ngModel)]="user.name" type="text" placeholder="Nom">
+								</div>
+                <div class="form-group">
+									<span class="form-label">Email</span>
+									<input class="form-control" [(ngModel)]="user.email" type="text" placeholder="Email">
+								</div>
+                <div class="form-group">
+									<span class="form-label">Password</span>
+									<input class="form-control" [(ngModel)]="user.password" type="text" placeholder="Enter a new password">
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn" (click)="update()">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

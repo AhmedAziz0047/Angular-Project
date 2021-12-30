@@ -26,7 +26,7 @@ export class UpdateUserAdminComponent implements OnInit {
   });}
  
   navigate(){
-    this.router.navigate(['/adminnav/adminusres']);
+    this.router.navigate(['/adminnav/adminUser']);
   }
 
   update(){

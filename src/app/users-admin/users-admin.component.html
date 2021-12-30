@@ -1,79 +1,45 @@
-<!-- 
-<div id="content">
-  <div class="container-fluid">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">name</th>
-          <th scope="col">last name</th>
-          <th scope="col">password</th>
-          <th scope="col">email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+ <div class="col-md-3" >
+    <ul>
+      <li>
+        <a role="button" [routerLink]="['adminAddUser']" >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="fa fa-user"></span>
+        </a>
+      </li>
+    </ul>
   </div>
-</div> -->
-<div class="col-md-3">
-  <ul>
-    <li>
-      <a role="button" [routerLink]="['adminAddUser']" >
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="fa fa-plane"></span>
-      </a>
-    </li>
-  </ul>
-</div>
 
-<div id="content">
-<div class="container-fluid">
-<table class="table" cellSpacing=50>
-  <thead>
-    <tr>
-      <th scope="col">name</th>
-      <th scope="col">email</th>
-      <th scope="col">password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of users">
-      <td>{{item.name}}</td>
-      <td>{{item.email}}</td>
-      <td> {{item.password}} </td>
-      <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
-      <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminUser/adminUpdateUser' , item._id]"></i></th>
-    </tr>
+  <div id="content">
+  <div class="container-fluid">
+  <table class="table" cellSpacing=50 style="margin-right: -25cm;margin-top: 1.5cm;">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col">password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users">
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td> {{item.password}} </td>
+        <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
+        <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminUser/adminUpdateUser' , item._id]"></i></th>
+      </tr>
 
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-</div>
+  </div>
 
-</div>
-<div class="updateOut">
-<router-outlet></router-outlet>
-</div>
+  </div>
+  <div class="updateOut">
+  <router-outlet></router-outlet>
+  </div>
+
 

@@ -11,7 +11,6 @@ export class AddUserAdminComponent implements OnInit {
 
   constructor(private _user: UsersService , private  route: ActivatedRoute) { }
   user = {
-
     name: "",
     email: "",
     password: ""

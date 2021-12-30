@@ -25,6 +25,8 @@ import { UpdateFlightAdminComponent } from './update-flight-admin/update-flight-
 import { UpdateReservationAdminComponent } from './update-reservation-admin/update-reservation-admin.component';
 import { AddFlightAadminComponent } from './add-flight-aadmin/add-flight-aadmin.component';
 import { AddReservationAadminComponent } from './add-reservation-aadmin/add-reservation-aadmin.component';
+import { UpdateUserAdminComponent } from './update-user-admin/update-user-admin.component';
+import { AddUserAdminComponent } from './add-user-admin/add-user-admin.component';
 // import {MatInputModule} from '@angular/material';
 
 @NgModule({
@@ -35,7 +37,6 @@ import { AddReservationAadminComponent } from './add-reservation-aadmin/add-rese
     NavbarComponent,
     CarsComponent,
     AdminNavComponent,
- 
     FooterComponent,
     NotFoundComponent,
     ReservationComponent,
@@ -45,8 +46,10 @@ import { AddReservationAadminComponent } from './add-reservation-aadmin/add-rese
     AdminReservationsComponent,
     UpdateFlightAdminComponent,
     UpdateReservationAdminComponent,
+    UpdateUserAdminComponent,
     AddFlightAadminComponent,
-    AddReservationAadminComponent
+    AddReservationAadminComponent,
+    AddUserAdminComponent
   ],
   imports: [
     BrowserModule,

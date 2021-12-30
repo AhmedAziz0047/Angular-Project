@@ -15,7 +15,7 @@ router.get('/api/getUserById/:id',getUserById);
 
 router.post('/api/addUser',createUser);
 router.delete('/api/deleteUser/:id',deleteUser);
-router.put('/api/editUser/:id', updateUSer);
+router.put('/api/editUser/:id', updateUser);
 
 
 module.exports = router;

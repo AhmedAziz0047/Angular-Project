@@ -61,7 +61,7 @@ exports.profile = (req, res, next) => {
   }
   
   exports.getUserById=(req, res)=>{
-    Flight.findOne({_id: req.params.id})
+    User.findOne({_id: req.params.id})
     .then(user=>res.send(user))
     .catch(err=>res.status(400).json({error: err.message}))
   }
@@ -82,7 +82,7 @@ exports.profile = (req, res, next) => {
   }
   
   exports.updateUSer  = (req, res, next) => {
-    Flight.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+    User.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
       .then(() => res.status(200).json({ message: 'User Updated !'}))
       .catch(error => res.status(400).json({ error }));
   };

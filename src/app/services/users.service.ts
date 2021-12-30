@@ -17,7 +17,7 @@ export class ConfigService {
 export class UsersService {
 
 
-  private apiUrl = 'http://localhost:3000/api/';
+  private apiUrl = 'http://localhost:3000/api/auth/api/';
 
    constructor(private http: HttpClient) { }
   // private _refreshNeeded$=new Subject<void>();

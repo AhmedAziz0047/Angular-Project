@@ -2,7 +2,7 @@ const Flight=require('./../models/Flight');
 
 exports.getFlights=(req, res)=>{
   Flight.find()
-  .then(flight=>res.send(flight))
+  .then(flight=>res.status(200).send(flight))
   .catch(err=>res.status(400).json({error: err.message}))
 }
 

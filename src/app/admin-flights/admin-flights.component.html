@@ -21,14 +21,17 @@
           <th scope="col">Departure date</th>
           <th scope="col">Arrival date</th>
           <th scope="col">Price</th>
+          <th scope="col">Remaining seats</th>
+
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of flights">
-          <td>{{item.country}}</td>
+          <td >{{item.country}}</td>
           <td>{{item.date_aller}}</td>
           <td> {{item.date_retour}} </td>
-          <th scope="row">{{item.prix}}</th>
+          <td> {{item.date_retour}} </td>
+          <td> {{item.Remaining_Seats}} </td>
           <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
           <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminflights/adminUpdateFlight' , item._id]"></i></th>
         </tr>

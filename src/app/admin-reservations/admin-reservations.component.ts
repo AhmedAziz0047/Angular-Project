@@ -18,6 +18,7 @@ export class AdminReservationsComponent implements OnInit {
     this.reservation.all().subscribe(
       res=>{
         this.reservations = res;
+        console.log(res)
       }
     );
 

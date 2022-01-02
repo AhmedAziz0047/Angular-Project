@@ -10,7 +10,7 @@ import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 
 export class UpdateReservationAdminComponent implements OnInit {
 
-  constructor(private _reser: ReservationsService , private  route: ActivatedRoute) { }
+  constructor(private _reser: ReservationsService , private  route: ActivatedRoute, private router:Router) { }
 
   id: any;
   reservation = {
@@ -37,7 +37,11 @@ export class UpdateReservationAdminComponent implements OnInit {
   }
   update(){
     this._reser.update(this.id , this.reservation).subscribe(
-      res=>{}
+      res=>{
+        this.router.navigate(['/adminnav/adminReservations']).then(()=>{
+          window.location.reload()
+        }).finally(()=>{window.scrollTo(0,0)})
+      }
     );
 
   }

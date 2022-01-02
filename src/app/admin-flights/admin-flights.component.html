@@ -31,19 +31,13 @@
           <td>{{item.date_aller}}</td>
           <td> {{item.date_retour}} </td>
           <td> {{item.date_retour}} </td>
-          <td> {{item.Remaining_Seats}} </td>
+          <td [ngClass]="{'zero': item.Remaining_Seats === 0}"> {{item.Remaining_Seats}} </td>
           <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
           <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminflights/adminUpdateFlight' , item._id]"></i></th>
         </tr>
-
-
       </tbody>
     </table>
-
+    <router-outlet></router-outlet>
   </div>
-
-</div>
-<div class="updateOut">
-   <router-outlet></router-outlet>
 </div>
 

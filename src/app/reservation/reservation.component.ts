@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { FlightsService } from '../services/flights.service';
 import { ReservationsService } from '../services/reservations.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -9,7 +10,7 @@ import { ReservationsService } from '../services/reservations.service';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor(private _reser: ReservationsService ,private flights: FlightsService , private  route: ActivatedRoute,private router:Router) { }
+  constructor(private toastr: ToastrService, private _reser: ReservationsService ,private flights: FlightsService , private  route: ActivatedRoute,private router:Router) { }
   id:any=this.route.snapshot.paramMap.get("id");
   reservations={
     "country":"",
@@ -41,7 +42,8 @@ export class ReservationComponent implements OnInit {
         res=>{
           this.fl= res;
           this.RemainingSeats=this.fl.Remaining_Seats;
-          this.flight = this.fl;console.log(this.RemainingSeats);
+          this.flight = this.fl;
+          console.log(this.RemainingSeats);
           console.log(this.RemainingSeats)
         }
 
@@ -53,11 +55,20 @@ export class ReservationComponent implements OnInit {
     this.flight=this.fl
     this.flight.Remaining_Seats=this.RemainingSeats
     this.flights.update(this.id , this.flight).subscribe(
-      res=>{});
+      res=>{
+
+      });
   }
   addReservation()
-    { this.rv=this.reservations;
-      this._reser.add(this.rv).subscribe(res=>{});
+    {
+      this.reservations.country=this.flight.country;
+      this.rv=this.reservations;
+      this._reser.add(this.rv).subscribe(res=>{
+
+        this.toastr.success('You will receive your confimation number soon', 'Congatulation')
+        this.router.navigate(['/vols'])
+      },err=>{
+        this.toastr.warning("Warning","Verifyyour infos")      });
       this.updatePlacesLeft();
 
 

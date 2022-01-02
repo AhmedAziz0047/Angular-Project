@@ -120,3 +120,8 @@ ul li:nth-child(3):hover span{
 ul li:nth-child(4):hover span{
   background: #FCEB00 !important;
 }
+
+td.zero{
+  background-color: #b11b1b;
+  color: #ffffff;
+}

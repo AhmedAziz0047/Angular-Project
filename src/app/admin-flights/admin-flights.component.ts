@@ -22,9 +22,6 @@ export class AdminFlightsComponent implements OnInit {
     );
 
   }
-
-
-
   delete(id:any){
     this.flight.delete(id).subscribe(
       res=>{

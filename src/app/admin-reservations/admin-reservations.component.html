@@ -30,7 +30,7 @@
           <td> {{item.prenomclient}} </td>
           <td> {{item.email}} </td>
           <th scope="col"><i role="button" class="fas fa-trash-alt" (click)="delete(item._id)"></i></th>
-          <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminReservations/adminUpdateReservation' , item.codeReserv]"></i></th>
+          <th><i role="button" class="fas fa-edit" [routerLink]="['/adminnav/adminReservations/adminUpdateReservation' , item._id]"></i></th>
         </tr>
 
 

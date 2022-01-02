@@ -38,14 +38,17 @@ export class UpdateFlightAdminComponent implements OnInit {
 
   }
   navigate(){
-    this.router.navigate(['/adminnav/adminflights']);
+    return this.router.navigate(['/adminnav/adminflights']);
   }
 
   update(){
 
     this._flight.update(this.id , this.flight).subscribe(
       res=>{
-
+        this.router.navigate(['/adminnav/adminflights']).then(()=>{
+          window.scroll(0,0)
+          window.location.reload()
+        })
       }
     );
 

@@ -8,6 +8,8 @@ import { UserComponent } from './user/user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarsComponent } from './cars/cars.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { FooterComponent } from './footer/footer.component';
@@ -54,8 +56,9 @@ import { AddUserAdminComponent } from './add-user-admin/add-user-admin.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule, AdminDashbordModule, VehiculeModule,HttpClientModule,FormsModule
-  ],
+    RouterModule, AdminDashbordModule, VehiculeModule,HttpClientModule,FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),],
   providers: [],
   bootstrap: [AppComponent]
 })

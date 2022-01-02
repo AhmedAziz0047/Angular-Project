@@ -75,12 +75,14 @@ export class ReservationComponent implements OnInit {
       this.reservations.country=this.flight.country;
       this.rv=this.reservations;
       this._reser.add(this.rv).subscribe(res=>{
-
+        
         this.toastr.success('You will receive your confimation number soon', 'Congatulation')
         this.router.navigate(['/vols'])
+        
       },err=>{
         this.toastr.warning("Warning","Verify your infos")      });
-      this.updatePlacesLeft();
+        
+        this.updatePlacesLeft()
 
 
 

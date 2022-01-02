@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
@@ -12,10 +12,12 @@ import { AuthService } from "src/app/services/auth.service";
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
+  
 
   constructor(
     public formBuilder: FormBuilder,
     public authService: AuthService,
+    private toastr: ToastrService,
     public router: Router
   ) {
     this.loginForm= this.formBuilder.group({
@@ -28,7 +30,11 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    if(this.loginForm.valid) {
     this.authService.login(this.loginForm.value)
-  }
+    this.toastr.success('You login up successfully', 'Congatulation');
+  }else{
+    this.toastr.warning('Please verify your infos', 'Warning')
+  }}
 
 }

@@ -12,7 +12,6 @@ import { AuthService } from "src/app/services/auth.service";
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  
 
   constructor(
     public formBuilder: FormBuilder,
@@ -30,11 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    if(this.loginForm.valid) {
+   // this.authService.login(this.loginForm.value)
+   if(this.loginForm.valid) {
     this.authService.login(this.loginForm.value)
-    this.toastr.success('You login up successfully', 'Congatulation');
-  }else{
-    this.toastr.warning('Please verify your infos', 'Warning')
-  }}
+      
+        // this.loginForm.reset();
+        this.toastr.success('You signed up successfully', 'Congatulation');
+
+  }
+  else{this.toastr.warning('Please verify your infos', 'Warning')}
+
+  }
 
 }

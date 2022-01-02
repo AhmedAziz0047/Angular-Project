@@ -44,6 +44,14 @@
 									<span class="form-label">Email</span>
 									<input class="form-control" [ngClass]="{'is-invalid': email_ver==true}" type="email" [(ngModel)]="reservations.email" placeholder="Email">
 								</div>
+                <div class="form-group">
+									<span class="form-label">Bank Account RIB</span>
+									<input class="form-control" [ngClass]="{'is-invalid': rib==true}" type="number" [(ngModel)]="RIB" placeholder="Enter your RIB">
+								</div>
+                <div class="form-group">
+									<span class="form-label">RIB pin</span>
+									<input class="form-control" [ngClass]="{'is-invalid': ribp==true}" type="number" [(ngModel)]="RIBPIN" placeholder="RIB PIN">
+								</div>
 								<div class="form-btn">
 									<button class="submit-btn" (click)="addReservation()">Take a place </button>
 								</div>

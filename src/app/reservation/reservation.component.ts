@@ -12,7 +12,7 @@ export class ReservationComponent implements OnInit {
 
   constructor(private toastr: ToastrService, private _reser: ReservationsService ,private flights: FlightsService , private  route: ActivatedRoute,private router:Router) { }
   id:any=this.route.snapshot.paramMap.get("id");
-  nom_ver = false;prenom_ver = false;email_ver = false;
+  nom_ver = false;prenom_ver = false;email_ver = false;rib=false;ribp=false;
   reservations={
     "country":"",
     "nomclient":"",
@@ -34,8 +34,8 @@ export class ReservationComponent implements OnInit {
   toBeUhpdated:any;
   updated:any;
 
-
-
+  RIB=""
+  RIBPIN=""
   RemainingSeats=0;
 
   ngOnInit(): void {
@@ -72,6 +72,12 @@ export class ReservationComponent implements OnInit {
       if(!re.test(this.reservations.email)){
         this.email_ver=true;this.toastr.warning("Warning","Verify your email");return;
       }this.email_ver=false
+      if(String(this.RIB).length!=8){
+        this.rib=true;this.toastr.warning("Warning","Verify your RIB");return;
+      }this.prenom_ver=false
+      if(String(this.RIBPIN).length!=6){
+        this.ribp=true;this.toastr.warning("Warning","Verify your RIB PIN");return;
+      }this.ribp=false
       this.reservations.country=this.flight.country;
       this.rv=this.reservations;
       this._reser.add(this.rv).subscribe(res=>{

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     public authService: AuthService,
+    private toastr: ToastrService,
     public router: Router
   ) {
     this.registerForm = this.formBuilder.group({
@@ -32,17 +33,18 @@ export class RegisterComponent implements OnInit {
   signupUser() {
     if(this.registerForm.valid) {
       this.authService.signup(this.registerForm.value).subscribe(res => {
-        if(res.status == 201) {
+        
           this.registerForm.reset();
+          this.toastr.success('You signed up successfully', 'Congatulation')
           this.router.navigate(['/auth/login']);
-        }
+        
       },
       err => {
-        if (err.code == 400) {
-          this.registerForm.controls['email'].setErrors({used: true});
-        }
+        
+        
       });
     }
+    else{this.toastr.warning('Please verify your infos', 'Warning')}
   }
   private passwordMatchValidator(password: string, confirm_password: string) {
     return (group: FormGroup) => {

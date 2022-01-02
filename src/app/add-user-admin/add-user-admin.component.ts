@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../services/users.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-add-user-admin',
   templateUrl: './add-user-admin.component.html',
@@ -9,7 +9,7 @@ import { UsersService } from '../services/users.service';
 })
 export class AddUserAdminComponent implements OnInit {
 
-  constructor(private _user: UsersService , private  route: ActivatedRoute) { }
+  constructor(   private toastr: ToastrService,private _user: UsersService , private  route: ActivatedRoute) { }
   user = {
     name: "",
     email: "",
@@ -21,7 +21,10 @@ export class AddUserAdminComponent implements OnInit {
   }
   addUser()
   { this.fl=this.user;
-    this._user.add(this.fl).subscribe(res=>{});
+    this.toastr.warning('Please verify your infos', 'Warning')
+    this._user.add(this.fl).subscribe(res=>{
+      this.toastr.success('You signed up successfully', 'Congatulation')
+    });
     console.log(this.fl);
   }
 

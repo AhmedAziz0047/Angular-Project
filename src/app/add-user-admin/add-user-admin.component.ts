@@ -23,7 +23,7 @@ export class AddUserAdminComponent implements OnInit {
   { this.fl=this.user;
     this.toastr.warning('Please verify your infos', 'Warning')
     this._user.add(this.fl).subscribe(res=>{
-      this.toastr.success('You signed up successfully', 'Congatulation')
+      this.toastr.success('Successfully addition', 'Congatulation')
     });
     console.log(this.fl);
   }

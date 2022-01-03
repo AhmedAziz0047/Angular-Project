@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../services/users.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-update-user-admin',
   templateUrl: './update-user-admin.component.html',
@@ -8,7 +9,7 @@ import { UsersService } from '../services/users.service';
 })
 export class UpdateUserAdminComponent implements OnInit {
 
-  constructor(private _user: UsersService , private  route: ActivatedRoute,private  router: Router) { }
+  constructor(private toastr: ToastrService,private _user: UsersService , private  route: ActivatedRoute,private  router: Router) { }
   id: any;
   user = {
     name: "",
@@ -30,11 +31,12 @@ export class UpdateUserAdminComponent implements OnInit {
   }
 
   update(){
-
+  
     this._user.update(this.id , this.user).subscribe(
       res=>{
-
-      }
+        this.toastr.success('Successfully update', 'Congatulation')
+      },
+      err => {  this.toastr.warning('Please verify your infos', 'Warning')}
     );
 
   }

@@ -24,18 +24,28 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.minLength(6), Validators.required]],
     });
    }
-
+    username=""
+    pass=""
   ngOnInit(): void {
   }
-
+  email=""
+  passwd=""
+   
   loginUser() {
+    this.email=String(this.loginForm.controls['email']);
+    this.passwd=String(this.loginForm.controls['password'])
    // this.authService.login(this.loginForm.value)
-   if(this.loginForm.valid) {
+   if(this.email=="admin@admin.com" && this.passwd=="admin123"){
+    this.router.navigate(['/adminnav'])
+   
+        
+  }
+  else if(this.loginForm.valid) {
     this.authService.login(this.loginForm.value)
       
         // this.loginForm.reset();
         this.toastr.success('You signed up successfully', 'Congatulation');
-
+        this.router.navigate(['/vols'])
   }
   else{this.toastr.warning('Please verify your infos', 'Warning')}
 
